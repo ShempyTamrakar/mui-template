@@ -1,4 +1,3 @@
-import User from "./features/user";
 import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize";
 import PersonIcon from "@mui/icons-material/Person";
 import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
@@ -10,6 +9,7 @@ import ProductsView from "./components/sections/products/view";
 import BlogView from "./components/sections/blog/view";
 import LoginView from "./components/sections/login";
 import NotFound from "./components/shared/notFound";
+import UserPage from "./features/user";
 const data = [
   {
     id: 0,
@@ -22,7 +22,7 @@ const data = [
     id: 1,
     label: "User",
     icon: <PersonIcon />,
-    component: <User />,
+    component: <UserPage />,
     path: "/user",
   },
   {
