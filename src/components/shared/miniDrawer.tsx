@@ -95,16 +95,16 @@ export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate(); // Make sure to call useNavigate as a function to get the navigation function
 
-  const tabClickEvent = (url: any, index: number) => {
-    navigate(url.path); // Call the navigation function with the URL
-  };
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+  const tabClickEvent = (url: any, index: number) => {
+    navigate(url.path); // Call the navigation function with the URL
+    handleDrawerClose();
   };
 
   return (
@@ -156,6 +156,7 @@ export default function MiniDrawer() {
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
                   }}
+                  onClick={() => tabClickEvent(text, index)}
                 >
                   {text.icon}
                 </ListItemIcon>
