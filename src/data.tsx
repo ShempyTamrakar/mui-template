@@ -28,14 +28,14 @@ const data = [
   {
     id: 2,
     label: "Product",
-    icon: <AutoStoriesIcon />,
+    icon: <ProductionQuantityLimitsIcon />,
     component: <ProductsView />,
     path: "/product",
   },
   {
     id: 3,
     label: "Blog",
-    icon: <ProductionQuantityLimitsIcon />,
+    icon: <AutoStoriesIcon />,
     component: <BlogView />,
     path: "/blog",
   },
