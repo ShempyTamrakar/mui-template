@@ -6,12 +6,6 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import Iconify from "../../components/iconify";
 
-interface UserTableToolbarProps {
-  numSelected: number;
-  filterName: string;
-  onFilterName: any;
-}
-
 export default function UserTableToolbar({
   numSelected,
   filterName,

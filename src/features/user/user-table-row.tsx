@@ -11,17 +11,6 @@ import IconButton from "@mui/material/IconButton";
 import Iconify from "../../components/iconify";
 import Label from "../../components/label";
 
-interface UserTableRowProps {
-  selected: any;
-  name: any;
-  avatarUrl: any;
-  company: any;
-  role: any;
-  isVerified: any;
-  status: string;
-  handleClick: any;
-}
-
 export default function UserTableRow({
   selected,
   name,

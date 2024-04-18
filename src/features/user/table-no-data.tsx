@@ -3,10 +3,6 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import Typography from "@mui/material/Typography";
 
-interface TableNoDataProps {
-  query: string;
-}
-
 export default function TableNoData({ query }: TableNoDataProps) {
   return (
     <TableRow>

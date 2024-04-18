@@ -7,24 +7,6 @@ import TableSortLabel from "@mui/material/TableSortLabel";
 
 import { visuallyHidden } from "./utils";
 
-interface HeadCell {
-  id: string;
-  label?: string;
-  align?: "left" | "center" | "right";
-  width?: number;
-  minWidth?: number;
-}
-
-interface UserTableHeadProps {
-  order: "asc" | "desc";
-  orderBy: string;
-  rowCount: number;
-  headLabel: HeadCell[];
-  numSelected: number;
-  onRequestSort: (event: React.MouseEvent, property: string) => void;
-  onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
 export default function UserTableHead({
   order,
   orderBy,
