@@ -3,21 +3,16 @@ import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import data from "../../data";
 import { useNavigate } from "react-router-dom";
+import Header from "./header";
 
 const drawerWidth = 240;
 
@@ -92,7 +87,7 @@ const Drawer = styled(MuiDrawer, {
 
 export default function MiniDrawer() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const navigate = useNavigate(); // Make sure to call useNavigate as a function to get the navigation function
 
   const handleDrawerOpen = () => {
@@ -104,40 +99,38 @@ export default function MiniDrawer() {
   };
   const tabClickEvent = (url: any, index: number) => {
     navigate(url.path); // Call the navigation function with the URL
-    handleDrawerClose();
   };
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: "none" }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            {/* <Main /> */}
-          </Typography>
-        </Toolbar>
+        {/* <IconButton
+          aria-label="open drawer"
+          onClick={handleDrawerOpen}
+          edge="start"
+          sx={{
+            marginRight: 5,
+            ...(open && { display: "none" }),
+          }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" noWrap component="div">
+          <Main />
+        </Typography> */}
+
+        <Header />
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          {/* <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
             ) : (
               <ChevronLeftIcon />
             )}
-          </IconButton>
+          </IconButton> */}
         </DrawerHeader>
         <Divider />
         <List>
@@ -156,7 +149,6 @@ export default function MiniDrawer() {
                     mr: open ? 3 : "auto",
                     justifyContent: "center",
                   }}
-                  onClick={() => tabClickEvent(text, index)}
                 >
                   {text.icon}
                 </ListItemIcon>

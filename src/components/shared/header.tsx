@@ -1,11 +1,8 @@
-import PropTypes from "prop-types";
-
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { useTheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
-
 import { bgBlur } from "../../theme/css";
 import { NAV, HEADER } from "./config-layout";
 // import AccountPopover from "./common/account-popover";
@@ -45,21 +42,23 @@ export default function Header({ onOpenNav }: any) {
 
   return (
     <AppBar
-    //   sx={{
-    //     boxShadow: "none",
-    //     height: HEADER.H_MOBILE,
-    //     zIndex: theme.zIndex.appBar + 1,
-    //     ...bgBlur({
-    //       color: theme.palette.background.default,
-    //     }),
-    //     transition: theme.transitions.create(["height"], {
-    //       duration: theme.transitions.duration.shorter,
-    //     }),
-    //     ...(lgUp && {
-    //       width: `calc(100% - ${NAV.WIDTH + 1}px)`,
-    //       height: HEADER.H_DESKTOP,
-    //     }),
-    //   }}
+      sx={
+        {
+          boxShadow: "none",
+          height: HEADER.H_MOBILE,
+          zIndex: theme.zIndex.appBar + 1,
+          ...bgBlur({
+            color: theme.palette.background.default,
+          }),
+          transition: theme.transitions.create(["height"], {
+            duration: theme.transitions.duration.shorter,
+          }),
+          ...(lgUp && {
+            width: `calc(100% - ${NAV.WIDTH + 1}px)`,
+            height: HEADER.H_DESKTOP,
+          }),
+        } as any
+      }
     >
       <Toolbar
         sx={{
@@ -72,7 +71,3 @@ export default function Header({ onOpenNav }: any) {
     </AppBar>
   );
 }
-
-Header.propTypes = {
-  onOpenNav: PropTypes.func,
-};
